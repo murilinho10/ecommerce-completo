@@ -1,1 +1,1 @@
-const API_URL = 'https://ecommerce-completo-hg21.onrender.com/api';
+const API_URL = 'https://ecommerce-completo.vercel.app';
