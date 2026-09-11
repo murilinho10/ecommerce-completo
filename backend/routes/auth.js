@@ -90,10 +90,14 @@ router.post('/login', async (req, res) => {
 });
 
 // ---------- LOGOUT ----------
-router.post('/logout', (req, res) => {
-  res.clearCookie('token');
-  return res.json({ mensagem: 'Logout realizado.' });
-});
+   router.post('/logout', (req, res) => {
+     res.clearCookie('token', {
+       httpOnly: true,
+       secure: process.env.NODE_ENV === 'production',
+       sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax'
+     });
+     return res.json({ mensagem: 'Logout realizado.' });
+   });
 
 // ---------- QUEM SOU EU ----------
 router.get('/eu', autenticar, (req, res) => {
