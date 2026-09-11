@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Finalizar compra — TechStore</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topo topo-flex">
+    <a href="carrinho.html" class="link-voltar">← Carrinho</a>
+    <div id="areaConta" class="area-conta"></div>
+  </header>
+
+  <main class="container container-checkout">
+    <h2 class="titulo-pagina">Finalizar compra</h2>
+
+    <div class="checkout-grid">
+      <div class="card-form">
+        <h3>Endereço de entrega</h3>
+        <form id="formCheckout">
+          <label for="rua">Rua e número</label>
+          <input type="text" id="rua" name="rua" required>
+
+          <label for="cidade">Cidade</label>
+          <input type="text" id="cidade" name="cidade" required>
+
+          <label for="cep">CEP</label>
+          <input type="text" id="cep" name="cep" required>
+
+          <button type="submit">Confirmar pedido</button>
+        </form>
+        <div id="mensagem" class="mensagem"></div>
+      </div>
+
+      <div class="resumo-checkout">
+        <h3>Resumo</h3>
+        <div id="resumoItens">
+          <p class="carregando">Carregando...</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="cabecalho.js"></script>
+  <script src="checkout.js"></script>
+</body>
+</html>
